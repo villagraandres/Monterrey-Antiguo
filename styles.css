@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100vh; /* Subtract the height of the header */
+}
+
+/* Sidebar ajustes */
+.leaflet-sidebar .leaflet-sidebar-pane {
+    padding: 15px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #sidebar {
+        font-size: 14px;
+    }
+}
