@@ -47,6 +47,13 @@ const markers = [
         id:'cine-elizondo',
         title: "Cine Elizondo",
         description: "El imponente y legendario Gran Cinema ELIZONDO, es sin duda uno de los íconos más representativos de Monterrey y que se ubicaba en la acera Oriente en el 833 Sur de la avenida Zaragoza entre las calles de Padre Mier y Mariano Matamoros, dónde hoy se encuentra la Fuente de Neptuno de la Macro Plaza, en el centro de la ciudad de Monterrey, NL, México.." 
+    },
+
+    { 
+        coords: [25.665759605523423, -100.30962259104852],
+        id:'catedral-mty',
+        title: "Catedral de Monterrey",
+        description: "El imponente y legendario Gran Cinema ELIZONDO, es sin duda uno de los íconos más representativos de Monterrey y que se ubicaba en la acera Oriente en el 833 Sur de la avenida Zaragoza entre las calles de Padre Mier y Mariano Matamoros, dónde hoy se encuentra la Fuente de Neptuno de la Macro Plaza, en el centro de la ciudad de Monterrey, NL, México.." 
     }
 
 ];
@@ -72,6 +79,32 @@ function getImages(id){
     return images;
 
 }
+//polyline
+
+
+var latlngs = [
+    [25.6710283319292, -100.31010035916235],
+    [25.6708040921522, -100.30904137808261],
+    [25.670447607535806, -100.30650237525288]
+];
+
+var polyline = L.polyline(latlngs, {color: 'blue'}).addTo(map);
+map.fitBounds(polyline.getBounds());
+
+
+//icons
+
+
+var bridge = L.icon({
+    iconUrl: 'images/icons/bridge.png',
+    iconSize: [38, 95],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94]
+});
+
+//markers
 markers.map(marker=>{
     marker.images=getImages(marker.id)
 });
