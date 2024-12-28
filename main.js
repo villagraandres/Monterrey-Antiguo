@@ -1,4 +1,5 @@
-    // Inicializa el mapa centrado en Monterrey
+
+   // Inicializa el mapa centrado en Monterrey
 const map = L.map('map').setView([25.667681, -100.310019], 20);
 
 // Capa base 1: Mapa estándar
@@ -37,8 +38,8 @@ const markers = [
         coords: [25.66521791707737, -100.31154415570292],
         id:'circulo-mercantil',
         title: "Circulo Mercantil",
-        description: "El Círculo Mercantil Mutualista de Monterrey fue constituido en 1901 y contaba con 38 socios. El edificio actual fue diseñado por FIUSA y su construcción dirigida por Juan Garza Lafón, inaugurándose en septiembre de 1933. Ocupa parte del terreno de la antigua iglesia y convento de San Francisco que cerraban la calle de Zaragoza al sur y que fueron destruidos en 1914"
-           
+        description: "El Círculo Mercantil Mutualista de Monterrey fue constituido en 1901 y contaba con 38 socios. El edificio actual fue diseñado por FIUSA y su construcción dirigida por Juan Garza Lafón, inaugurándose en septiembre de 1933. Ocupa parte del terreno de la antigua iglesia y convento de San Francisco que cerraban la calle de Zaragoza al sur y que fueron destruidos en 1914",
+        icon:'generic'   
     },
 
 
@@ -46,15 +47,34 @@ const markers = [
         coords: [25.668122, -100.310596],
         id:'cine-elizondo',
         title: "Cine Elizondo",
-        description: "El imponente y legendario Gran Cinema ELIZONDO, es sin duda uno de los íconos más representativos de Monterrey y que se ubicaba en la acera Oriente en el 833 Sur de la avenida Zaragoza entre las calles de Padre Mier y Mariano Matamoros, dónde hoy se encuentra la Fuente de Neptuno de la Macro Plaza, en el centro de la ciudad de Monterrey, NL, México.." 
+        description: "El imponente y legendario Gran Cinema ELIZONDO, es sin duda uno de los íconos más representativos de Monterrey y que se ubicaba en la acera Oriente en el 833 Sur de la avenida Zaragoza entre las calles de Padre Mier y Mariano Matamoros, dónde hoy se encuentra la Fuente de Neptuno de la Macro Plaza, en el centro de la ciudad de Monterrey, NL, México..",
+        icon:'cinema' 
     },
 
     { 
-        coords: [25.665759605523423, -100.30962259104852],
+        coords: [25.66527821130441, -100.30966899686675],
         id:'catedral-mty',
         title: "Catedral de Monterrey",
-        description: "El imponente y legendario Gran Cinema ELIZONDO, es sin duda uno de los íconos más representativos de Monterrey y que se ubicaba en la acera Oriente en el 833 Sur de la avenida Zaragoza entre las calles de Padre Mier y Mariano Matamoros, dónde hoy se encuentra la Fuente de Neptuno de la Macro Plaza, en el centro de la ciudad de Monterrey, NL, México.." 
-    }
+        description: "El imponente y legendario Gran Cinema ELIZONDO, es sin duda uno de los íconos más representativos de Monterrey y que se ubicaba en la acera Oriente en el 833 Sur de la avenida Zaragoza entre las calles de Padre Mier y Mariano Matamoros, dónde hoy se encuentra la Fuente de Neptuno de la Macro Plaza, en el centro de la ciudad de Monterrey, NL, México.." ,
+        icon:'church'
+    },
+    { 
+        coords: [25.670974, -100.310079],
+        id:'puente-juarez',
+        title: "Antiguo Puente Juarez",
+        description:"Ya no existe ",
+        icon:'generic'
+    },
+
+    { 
+        coords: [25.68252068033367, -100.29634258027747],
+        id:'prepa-3',
+        title: "Preparatoria 3",
+        description:"ahi esta ",
+        icon:'generic'
+    },
+
+
 
 ];
 
@@ -88,28 +108,48 @@ var latlngs = [
     [25.670447607535806, -100.30650237525288]
 ];
 
-var polyline = L.polyline(latlngs, {color: 'blue'}).addTo(map);
-map.fitBounds(polyline.getBounds());
+
 
 
 //icons
 
+const icons = {
+    generic: L.icon({
+        iconUrl: 'images/icons/generic.png',
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40]
+    }),
+    cinema: L.icon({
+        iconUrl: 'images/icons/cinema.png',
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40]
+    }),
+    church: L.icon({
+        iconUrl: 'images/icons/church.png',
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40]
+    })
+};
 
-var bridge = L.icon({
-    iconUrl: 'images/icons/bridge.png',
-    iconSize: [38, 95],
-    iconAnchor: [22, 94],
-    popupAnchor: [-3, -76],
-    shadowSize: [68, 95],
-    shadowAnchor: [22, 94]
+
+
+//river
+
+var polyline = L.polyline(latlngs, {color: 'blue'}).addTo(map).on('click',()=>{
+    alert("sa");
 });
+map.fitBounds(polyline.getBounds());
+
 
 //markers
 markers.map(marker=>{
     marker.images=getImages(marker.id)
 });
 markers.forEach(marker => {
-    L.marker(marker.coords)
+    L.marker(marker.coords,{icon:icons[marker.icon]})
         .addTo(map)
         .on('click', () => {
             sidebar.open('info');
@@ -118,4 +158,5 @@ markers.forEach(marker => {
             <p>${marker.description}</p>
             ${marker.images.map(img => `<img src="${img}" alt="${marker.title}" style="width:100%;margin-top:10px;">`).join('')}`;
         });
+    
 });
