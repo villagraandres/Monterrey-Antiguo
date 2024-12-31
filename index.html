@@ -5,36 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-sidebar-v2/css/leaflet-sidebar.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 
    
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            padding: 0;
-            margin: 0;
-        }
-        html, body, #map {
-            height: 100%;
-            font: 10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
-        }
-        .lorem {
-            font-style: italic;
-            text-align: justify;
-            color: #AAA;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 10px;
-        }
-    </style>
+    
 </head>
 <body>
     <!-- Sidebar -->
-    <div id="sidebar" class="leaflet-sidebar collapsed">
+    <!-- <div id="sidebar" class="leaflet-sidebar collapsed">
         <div class="leaflet-sidebar-tabs">
             <ul role="tablist">
                 <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
@@ -53,9 +33,26 @@
             </div>
         </div>
     </div>
-
+ -->
     <!-- Mapa -->
     <div id="map"></div>
+
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button id="closeButton" class="close-button">&times;</button>
+            </div>
+            <p id="modalDescription"></p>
+            <div id="zoomedImageContainer"></div>
+            <div class="image-carousel"></div>
+            <div class="carousel-buttons">
+                <button id="prevButton">&lt;</button>
+                <button id="nextButton">&gt;</button>
+            </div>
+            
+        </div>
+    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet-sidebar-v2/js/leaflet-sidebar.min.js"></script>

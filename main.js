@@ -1,5 +1,4 @@
-
-   // Inicializa el mapa centrado en Monterrey
+// Inicializa el mapa centrado en Monterrey
 const map = L.map('map').setView([25.667681, -100.310019], 20);
 
 // Capa base 1: Mapa estándar
@@ -144,19 +143,93 @@ var polyline = L.polyline(latlngs, {color: 'blue'}).addTo(map).on('click',()=>{
 map.fitBounds(polyline.getBounds());
 
 
-//markers
-markers.map(marker=>{
-    marker.images=getImages(marker.id)
+// Función para abrir la modal
+let currentIndex = 0;
+
+function openModal(title, description, images) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalDescription').textContent = description;
+
+  const carousel = document.querySelector('.image-carousel');
+  carousel.innerHTML = images
+    .map((img, index) => `<img src="${img}" class="carousel-image ${index === 0 ? 'active' : ''}" alt="Imagen" onclick="zoomImage(${index})">`)
+    .join('');
+
+  const zoomedImageContainer = document.getElementById('zoomedImageContainer');
+  zoomedImageContainer.innerHTML = images
+    .map((img, index) => `<img src="${img}" class="zoomed-image ${index === 0 ? 'active' : ''}" alt="Imagen ampliada">`)
+    .join('');
+
+  currentIndex = 0;
+  document.querySelector('.modal-overlay').classList.add('active');
+  updateCarouselButtons();
+}
+function closeModal() {
+  document.querySelector('.modal-overlay').classList.remove('active');
+}
+
+// Close modal when clicking outside of it
+document.querySelector('.modal-overlay').addEventListener('click', (e) => {
+  if (e.target === document.querySelector('.modal-overlay')) {
+    closeModal();
+  }
 });
-markers.forEach(marker => {
-    L.marker(marker.coords,{icon:icons[marker.icon]})
-        .addTo(map)
-        .on('click', () => {
-            sidebar.open('info');
-            document.getElementById('marker-info').innerHTML = `
-            <h3>${marker.title}</h3>
-            <p>${marker.description}</p>
-            ${marker.images.map(img => `<img src="${img}" alt="${marker.title}" style="width:100%;margin-top:10px;">`).join('')}`;
-        });
-    
+
+// Funciones para navegar el carrusel
+function prevImage() {
+  const images = document.querySelectorAll('.carousel-image');
+  images[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  images[currentIndex].classList.add('active');
+  updateCarouselButtons();
+  zoomImage(currentIndex);
+}
+
+function nextImage() {
+  const images = document.querySelectorAll('.carousel-image');
+  images[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % images.length;
+  images[currentIndex].classList.add('active');
+  updateCarouselButtons();
+  zoomImage(currentIndex);
+}
+
+// Función para actualizar el estado de los botones del carrusel
+function updateCarouselButtons() {
+  const images = document.querySelectorAll('.carousel-image');
+  document.getElementById('prevButton').disabled = currentIndex === 0;
+  document.getElementById('nextButton').disabled = currentIndex === images.length - 1;
+}
+
+// Función para hacer zoom en la imagen seleccionada
+function zoomImage(index) {
+  const zoomedImages = document.querySelectorAll('.zoomed-image');
+  const carouselImages = document.querySelectorAll('.carousel-image');
+  zoomedImages.forEach((img, i) => {
+    img.classList.toggle('active', i === index);
+  });
+  carouselImages.forEach((img, i) => {
+    img.classList.toggle('active', i === index);
+  });
+  currentIndex = index;
+  updateCarouselButtons();
+}
+
+// Agrega los marcadores al mapa
+markers.forEach((marker) => {
+    // Obtén las imágenes del marcador
+    const images = getImages(marker.id);
+
+    // Crea el marcador con el ícono correspondiente
+    const leafletMarker = L.marker(marker.coords, { icon: icons[marker.icon] }).addTo(map);
+
+    // Asigna el evento 'click' al marcador para abrir el modal
+    leafletMarker.on('click', () => {
+        openModal(marker.title, marker.description, images);
+    });
 });
+
+// Event listeners for modal navigation buttons
+document.getElementById('prevButton').addEventListener('click', prevImage);
+document.getElementById('nextButton').addEventListener('click', nextImage);
+document.getElementById('closeButton').addEventListener('click', closeModal);
