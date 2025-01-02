@@ -30,6 +30,38 @@ const sidebar = L.control.sidebar({
     container: 'sidebar'
 }).addTo(map);
 
+
+//icons
+
+const icons = {
+    generic: L.icon({
+        iconUrl: 'images/icons/generic.png',
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40]
+    }),
+    genericS: L.icon({
+        iconUrl: 'images/icons/camera.png',
+        iconSize: [30, 30],
+        iconAnchor: [20, 20],
+        popupAnchor: [0, -40]
+    }),
+    cinema: L.icon({
+        iconUrl: 'images/icons/cinema.png',
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40]
+    }),
+    church: L.icon({
+        iconUrl: 'images/icons/church.png',
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40]
+    })
+};
+
+
+
 // Lista de marcadores
 const markers = [
     
@@ -38,7 +70,7 @@ const markers = [
         id:'circulo-mercantil',
         title: "Circulo Mercantil",
         description: "El Círculo Mercantil Mutualista de Monterrey fue constituido en 1901 y contaba con 38 socios. El edificio actual fue diseñado por FIUSA y su construcción dirigida por Juan Garza Lafón, inaugurándose en septiembre de 1933. Ocupa parte del terreno de la antigua iglesia y convento de San Francisco que cerraban la calle de Zaragoza al sur y que fueron destruidos en 1914",
-        icon:'generic'   
+        icon:'genericS'   
     },
 
 
@@ -67,10 +99,40 @@ const markers = [
 
     { 
         coords: [25.68252068033367, -100.29634258027747],
-        id:'prepa-3',
+        id:'prepa3',
         title: "Preparatoria 3",
         description:"ahi esta ",
         icon:'generic'
+    },
+    { 
+        coords: [25.66565418852964, -100.31059007045887],
+        id:'pzaragoza',
+        title: "Plaza Zaragoza",
+        description:"",
+        icon:'generic'
+    },
+
+    { 
+        coords: [25.667978736383702, -100.31148212647439],
+        id:'vidaurri',
+        title: "Antigua casa de Vidaurri",
+        description:"",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.667830043024228, -100.31736147495705],
+        id:'vr',
+        title: "Residencia del empresario español Valentin Rivero",
+        description:"",
+        icon:'genericS'
+    },
+    { 
+        coords: [25.668650228961805, -100.3155597237249],
+        id:'rf',
+        title: "La Rueda de la Fortuna",
+        description:"Una escena del 21 de marzo de 1906 en el centro de Monterrey ; se efectuaba el cambio de nomenclatura de la antigua calle del Roble por calle Benito Juárez.",
+        icon:'genericS'
     },
 
 
@@ -110,28 +172,6 @@ var latlngs = [
 
 
 
-//icons
-
-const icons = {
-    generic: L.icon({
-        iconUrl: 'images/icons/generic.png',
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        popupAnchor: [0, -40]
-    }),
-    cinema: L.icon({
-        iconUrl: 'images/icons/cinema.png',
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        popupAnchor: [0, -40]
-    }),
-    church: L.icon({
-        iconUrl: 'images/icons/church.png',
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        popupAnchor: [0, -40]
-    })
-};
 
 
 
