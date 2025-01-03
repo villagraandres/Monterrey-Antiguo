@@ -135,6 +135,65 @@ const markers = [
         icon:'genericS'
     },
 
+    { 
+        coords: [25.665622, -100.312317],
+        id:'cSA',
+        title: "Convento de San Andres",
+        description:"Fue una de las primeras construcciones en Monterrey, iniciando su obra en 161 En su solar tenía caballerizas y un cementerio, donde fueron sepultados los fundadores de la Ciudad Metropolitana de Nuestra Señora de Monterrey.Fue demolido en 1914 tras los eventos revolucionarios suscitados en Monterrey. Se puede ver aun en el escudo de del estado",
+        icon:'church'
+    },
+
+    { 
+        coords: [25.666254389817944, -100.31108824969155],
+        id:'palMun',
+        title: "Antiguo Palacio Municipal de Monterrey",
+        description:"",
+        icon:'generic'
+    },
+
+
+    { 
+        coords: [25.667428497638404, -100.31309384966153],
+        id:'hotelMex',
+        title: "Hotel Mexico",
+        description:"En la planta alta albergaba al hotel y su planta baja era ocupada por varios negocios ; actualmente ahí se ubica Plaza México en las dos plantas.",
+        icon:'genericS'
+    },
+
+    
+    { 
+        coords: [25.66881261327536, -100.31168057706472],
+        id:'teatroProg',
+        title: "Teatro Progreso",
+        description:"",
+        icon:'cinema'
+    },
+
+    { 
+        coords: [25.668166404506614, -100.31516883925643],
+        id:'mercadoColon',
+        title: "Antiguo Mercado Colon",
+        description:"Esta alberca llegó a ser justamente famosa y tuvo servicios de baños de todos tipos, como rusos, turcos, de regadera tibia y fría, de tina y de estanque; así como departamentos para masajes. La prensa local publicaba casi diariamente anuncios de la Compañía de Baños o La Alberca, El pueblo de Monterrey tuvo siempre gran cariño por esta instalación cuyas aguas de manantial nacido allí, fueron tradicionales, por pertenecer a lo que se llamó Río de Santa Lucía y más tarde el “Canalón”.",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.6697578116123, -100.3108505118439],
+        id:'casaBanos',
+        title: "La casa de Baños",
+        description:"Esta alberca llegó a ser justamente famosa y tuvo servicios de baños de todos tipos, como rusos, turcos, de regadera tibia y fría, de tina y de estanque; así como departamentos para masajes. La prensa local publicaba casi diariamente anuncios de la Compañía de Baños o La Alberca, El pueblo de Monterrey tuvo siempre gran cariño por esta instalación cuyas aguas de manantial nacido allí, fueron tradicionales, por pertenecer a lo que se llamó Río de Santa Lucía y más tarde el “Canalón”.",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.66732735941087, -100.31153135956201],
+        id:'tSorpresa',
+        title: "Sorpresa y Primavera",
+        description:"La tienda Sorpresa y Primavera fue fundada el 1 de marzo de 1891 por los hermanos Manuel, José y Rufino Cantú Treviño en la calle del Comercio (hoy Morelos) en Monterrey. Tras su éxito, adquirieron la propiedad y en 1900 contrataron al arquitecto Alfred Giles para construir un nuevo edificio. Inaugurado en 1901, este edificio de tres pisos albergaba oficinas, una tienda de artículos importados y telas locales, y contaba con el primer elevador en Monterrey, aunque era poco usado por la clientela de la época. En mayo de 1926, un incendio destruyó esta joya arquitectónica, que permanece en el recuerdo de la ciudad.",
+        icon:'genericS'
+    },
+
+
 
 
 ];
