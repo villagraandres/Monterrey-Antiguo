@@ -179,8 +179,8 @@ const markers = [
 
     { 
         coords: [25.6697578116123, -100.3108505118439],
-        id:'casaBanos',
-        title: "La casa de Banos",
+        id:'casabanos',
+        title: "La casa de Baños",
         description:"Esta alberca llegó a ser justamente famosa y tuvo servicios de baños de todos tipos, como rusos, turcos, de regadera tibia y fría, de tina y de estanque; así como departamentos para masajes. La prensa local publicaba casi diariamente anuncios de la Compañía de Baños o La Alberca, El pueblo de Monterrey tuvo siempre gran cariño por esta instalación cuyas aguas de manantial nacido allí, fueron tradicionales, por pertenecer a lo que se llamó Río de Santa Lucía y más tarde el “Canalón”.",
         icon:'genericS'
     },
