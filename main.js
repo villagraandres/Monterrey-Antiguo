@@ -1,5 +1,5 @@
 // Inicializa el mapa centrado en Monterrey
-const map = L.map('map').setView([25.667681, -100.310019], 20);
+const map = L.map('map').setView([25.665306434652894, -100.3107755434175], 20);
 
 // Capa base 1: Mapa estándar
 const mapaBase = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -11,6 +11,7 @@ const mapaBase = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x
 // Capa base 2: Vista satelital
 const satelital = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: '© Esri, Maxar, Earthstar Geographics',
+    
 });
 
 // Agrega la capa satelital como predeterminada
@@ -29,6 +30,7 @@ const sidebar = L.control.sidebar({
     closeButton: true,
     container: 'sidebar'
 }).addTo(map);
+
 
 // Icons
 const icons = {
@@ -181,6 +183,22 @@ const markers = [
         icon:'generic'
     },
 
+    { 
+        coords: [25.685140263428753, -100.30971179021647],
+        id:'ferro',
+        title: "Estacion de ferrocarril unión ",
+        description:"",
+        icon:'generic'
+    },
+
+    { 
+        coords: [25.685957643134085, -100.31711030529593],
+        id:'hoteferro',
+        title: "Zona hotelera Ferrocarril Unión",
+        description:"",
+        icon:'genericS'
+    },
+
 
 ];
 
@@ -211,7 +229,9 @@ function getImages(id) {
 // Function to open the modal
 let currentIndex = 0;
 
-function openModal(title, description, images) {
+function openModal(title, description, id) {
+
+    const images = getImages(id);
     document.getElementById('modalTitle').textContent = title;
     document.getElementById('modalDescription').textContent = description;
 
@@ -292,10 +312,10 @@ function zoomImage(index) {
 
 // Add markers to the map
 markers.forEach((marker) => {
-    const images = getImages(marker.id);
+    
     const leafletMarker = L.marker(marker.coords, { icon: icons[marker.icon] }).addTo(map);
     leafletMarker.on('click', () => {
-        openModal(marker.title, marker.description, images);
+        openModal(marker.title, marker.description,marker.id);
     });
 });
 
