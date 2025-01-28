@@ -172,6 +172,16 @@ const markers = [
         description:"La tienda Sorpresa y Primavera fue fundada el 1 de marzo de 1891 por los hermanos Manuel, José y Rufino Cantú Treviño en la calle del Comercio (hoy Morelos) en Monterrey. Tras su éxito, adquirieron la propiedad y en 1900 contrataron al arquitecto Alfred Giles para construir un nuevo edificio. Inaugurado en 1901, este edificio de tres pisos albergaba oficinas, una tienda de artículos importados y telas locales, y contaba con el primer elevador en Monterrey, aunque era poco usado por la clientela de la época. En mayo de 1926, un incendio destruyó esta joya arquitectónica, que permanece en el recuerdo de la ciudad.",
         icon:'genericS'
     },
+
+    { 
+        coords: [25.672650920842667, -100.30882553424502],
+        id:'pgobierno',
+        title: "Palacio de Gobierno",
+        description:"",
+        icon:'generic'
+    },
+
+
 ];
 
 // Function to check if an image exists
