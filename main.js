@@ -202,36 +202,41 @@ const markers = [
 
 ];
 
-// Function to check if an image exists
-function imageExists(p) {
-    const http = new XMLHttpRequest();
-    http.open('HEAD', p, false);
-    http.send();
-    return http.status !== 404;
+async function imageExists(url) {
+    try {
+        const response = await fetch(url, { method: 'HEAD' });
+        return response.ok;
+    } catch (error) {
+        return false;
+    }
 }
 
-// Function to get images for a marker
-function getImages(id) {
+async function getImages(id) {
     const images = [];
     let index = 1;
     while (true) {
         const path = `images/${id}/i${index}.jpg`;
-        if (imageExists(path)) {
-            images.push(path);
-            index++;
-        } else {
-            break;
+        try {
+            const exists = await imageExists(path);
+            if (exists) {
+                images.push(path);
+                index++;
+            } else {
+                break; // Salir del bucle si no hay más imágenes
+            }
+        } catch (error) {
+            console.error(`Error al verificar la imagen ${path}:`, error);
+            break; // Salir del bucle si hay un error
         }
     }
-    return images;
+    return images; // Siempre devuelve un array, incluso si está vacío
 }
 
 // Function to open the modal
 let currentIndex = 0;
 
-function openModal(title, description, id) {
-
-    const images = getImages(id);
+async function openModal(title, description, id) {
+    const images = await getImages(id); // Await the result of getImages
     document.getElementById('modalTitle').textContent = title;
     document.getElementById('modalDescription').textContent = description;
 
