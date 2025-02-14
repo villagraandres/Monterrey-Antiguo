@@ -199,6 +199,55 @@ const markers = [
         icon:'genericS'
     },
 
+    { 
+        coords: [25.667144844313135, -100.31195036923283],
+        id:'morelos',
+        title: "Calle Morelos ",
+        description:"",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.666240325017448, -100.31341361705749],
+        id:'ancira',
+        title: "Hotel Ancira ",
+        description:"",
+        icon:'genericS'
+    },
+
+
+    { 
+        coords: [25.667876279071315, -100.30966145255536],
+        id:'zuazua',
+        title: "Calle Zuazua ",
+        description:"En la imagen se puede ver el antiguo transporte con mulas. Igualmente la casa de la familia Maiz.",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.667448874991983, -100.3095495509363],
+        id:'fmaiz',
+        title: "Casa de la familia Maiz.",
+        description:"La casa, ubicada en la esquina de Zuazua y Padre Mier, se construyó en 1895 y albergó a la familia hasta que un incendio en 1919 la dejó en ruinas. Fue demolida en 1921. Los Maiz fueron dueños de negocios como la Empresa Metalúrgica de Minas de San Pedro y San Pablo, sombrererías y participaron en la fundación del Casino de Monterrey.",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.666913684491004, -100.30998064591428],
+        id:'paletos',
+        title: "Sastreria A los cien mil paletos",
+        description:"La sastrería A los cien mil paletos estaba ubicada en la esquina de Morelos y Juan Zuazua, como se aprecia en una fotografía de finales del siglo XIX.",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.664437971229567, -100.31612129160538],
+        id:'psan',
+        title: "Puente San Luisito",
+        description:"Este puente, ubicado sobre el río Santa Catarina, fue una importante estructura de conexión en Monterrey durante finales del siglo XIX y principios del XX. Construido con un diseño funcional y resistente, el Puente de San Luisito facilitaba el tránsito de personas y mercancías en una época de crecimiento para la ciudad. Aunque ya no existe, su imagen permanece como testimonio del desarrollo urbano e histórico de la región.",
+        icon:'generic'
+    },
+
 
 ];
 
