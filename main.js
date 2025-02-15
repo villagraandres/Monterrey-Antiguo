@@ -137,7 +137,7 @@ const markers = [
         icon:'genericS'
     },
     { 
-        coords: [25.668650228961805, -100.3155597237249],
+        coords: [25.66820096427521, -100.31587602453637],
         id:'rf',
         title: "La Rueda de la Fortuna",
         description:"Una escena del 21 de marzo de 1906 en el centro de Monterrey ; se efectuaba el cambio de nomenclatura de la antigua calle del Roble por calle Benito Juárez.",
@@ -322,6 +322,23 @@ const markers = [
         icon:'generic'
     },
 
+    { 
+        coords: [25.668645209402168, -100.31540350977515],
+        id:'mieryroble',
+        title: "Vendedores ambulantes",
+        description:"",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.667924254151117, -100.31067863065792],
+        id:'zaramier',
+        title: "Zaragoza 1880",
+        description:"Monterrey, Nuevo Leon, México. La antigua calle del Ojo de Agua (hoy Zaragoza) en su cruce con Padre Mier, vista hacia el sur. Ca. 1880.",
+        icon:'genericS',
+        biblio:"Monterrey del Ayer"
+    },
+
     
 
 
@@ -347,23 +364,26 @@ async function getImages(id) {
                 images.push(path);
                 index++;
             } else {
-                break; // Salir del bucle si no hay más imágenes
+                break; 
             }
         } catch (error) {
             console.error(`Error al verificar la imagen ${path}:`, error);
-            break; // Salir del bucle si hay un error
+            break; 
         }
     }
-    return images; // Siempre devuelve un array, incluso si está vacío
+    return images; 
 }
 
 // Function to open the modal
 let currentIndex = 0;
 
-async function openModal(title, description, id) {
-    const images = await getImages(id); // Await the result of getImages
+async function openModal(title, description, id,biblio) {
+    const images = await getImages(id); 
     document.getElementById('modalTitle').textContent = title;
     document.getElementById('modalDescription').textContent = description;
+    if(biblio!=0){
+        document.getElementById('biblio').textContent = biblio;
+    }
 
     const carousel = document.querySelector('.image-carousel');
     carousel.innerHTML = images
@@ -445,7 +465,12 @@ markers.forEach((marker) => {
     
     const leafletMarker = L.marker(marker.coords, { icon: icons[marker.icon] }).addTo(map);
     leafletMarker.on('click', () => {
-        openModal(marker.title, marker.description,marker.id);
+        if('biblio' in marker){
+            openModal(marker.title, marker.description,marker.id,marker.biblio);
+        }else{
+            openModal(marker.title, marker.description,marker.id,0);
+        }
+        
     });
 });
 
