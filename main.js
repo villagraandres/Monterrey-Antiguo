@@ -17,6 +17,18 @@ const satelital = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/servi
 // Agrega la capa satelital como predeterminada
 satelital.addTo(map);
 
+const infoButton = L.control({ position: 'topleft' });
+
+infoButton.onAdd = function(map) {
+    const div = L.DomUtil.create('div', 'info-button');
+    div.innerHTML = '<button id="infoButton">Info</button>';
+    return div;
+};
+
+infoButton.addTo(map);
+
+
+
 // Control de capas para alternar entre mapa y satélite
 const capasBase = {
     "Mapa": mapaBase,
@@ -46,6 +58,12 @@ const icons = {
         iconAnchor: [20, 20],
         popupAnchor: [0, -40]
     }),
+    genericB: L.icon({
+        iconUrl: 'images/icons/camera.png',
+        iconSize: [40, 40],
+        iconAnchor: [20, 20],
+        popupAnchor: [0, -40]
+    }),
     cinema: L.icon({
         iconUrl: 'images/icons/cinema.png',
         iconSize: [40, 40],
@@ -63,7 +81,7 @@ const icons = {
 // Lista de marcadores
 const markers = [
     { 
-        coords: [25.66521791707737, -100.31154415570292],
+        coords: [25.664795997346236, -100.31165318508616],
         id:'circulo-mercantil',
         title: "Circulo Mercantil",
         description: "El Círculo Mercantil Mutualista de Monterrey fue constituido en 1901 y contaba con 38 socios. El edificio actual fue diseñado por FIUSA y su construcción dirigida por Juan Garza Lafón, inaugurándose en septiembre de 1933. Ocupa parte del terreno de la antigua iglesia y convento de San Francisco que cerraban la calle de Zaragoza al sur y que fueron destruidos en 1914",
@@ -126,7 +144,7 @@ const markers = [
         icon:'genericS'
     },
     { 
-        coords: [25.665622, -100.312317],
+        coords: [25.665391858382527, -100.31114516547818],
         id:'cSA',
         title: "Convento de San Andres",
         description:"Fue una de las primeras construcciones en Monterrey, iniciando su obra en 161 En su solar tenía caballerizas y un cementerio, donde fueron sepultados los fundadores de la Ciudad Metropolitana de Nuestra Señora de Monterrey.Fue demolido en 1914 tras los eventos revolucionarios suscitados en Monterrey. Se puede ver aun en el escudo de del estado",
@@ -204,11 +222,11 @@ const markers = [
         id:'morelos',
         title: "Calle Morelos ",
         description:"",
-        icon:'genericS'
+        icon:'genericB'
     },
 
     { 
-        coords: [25.666240325017448, -100.31341361705749],
+        coords: [25.66582463256773, -100.3125876951903],
         id:'ancira',
         title: "Hotel Ancira ",
         description:"",
@@ -247,6 +265,64 @@ const markers = [
         description:"Este puente, ubicado sobre el río Santa Catarina, fue una importante estructura de conexión en Monterrey durante finales del siglo XIX y principios del XX. Construido con un diseño funcional y resistente, el Puente de San Luisito facilitaba el tránsito de personas y mercancías en una época de crecimiento para la ciudad. Aunque ya no existe, su imagen permanece como testimonio del desarrollo urbano e histórico de la región.",
         icon:'generic'
     },
+
+    { 
+        coords: [25.684072911734955, -100.31807534921813],
+        id:'arco',
+        title: "Arco de la Independencia",
+        description:"Este puente, ubicado sobre el río Santa Catarina, fue una importante estructura de conexión en Monterrey durante finales del siglo XIX y principios del XX. Construido con un diseño funcional y resistente, el Puente de San Luisito facilitaba el tránsito de personas y mercancías en una época de crecimiento para la ciudad. Aunque ya no existe, su imagen permanece como testimonio del desarrollo urbano e histórico de la región.",
+        icon:'generic'
+    },
+
+    { 
+        coords: [25.668444055202407, -100.31377531978349],
+        id:'galeana',
+        title: "Constitucionalista en 1914",
+        description:"En esta imagen se puede ver tropas Constitucionalista o Carrancistas despues de la batalla contra tropas federalistas.",
+        icon:'genericB'
+    },
+
+    { 
+        coords: [25.666015084068295, -100.31220527115029],
+        id:'semaforo',
+        title: "Semáforo en 1920",
+        description:"Se puede ver como el cartel tiene la indicaciones Adeltante y Alto, este era controlado manualmente.",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.67372195802588, -100.31467564888223],
+        id:'croble',
+        title: "Antigua calle del Roble",
+        description:"Fotografia tomada en la antigua calle del Roble(hoy Benito Juárez), al fondo se puede ver el antiguo mercado Colón. Tambien los antiguos tramos del tranvia de mulitas.",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.667414143701823, -100.312595303467],
+        id:'reinera',
+        title: "La Reinera",
+        description:"Construido en 1899, este emblemático edificio de estilo neoclásico está revestido con cantera rosa traída de San Luis Potosí. Su diseño se atribuye al arquitecto británico Alfred Giles. En su segunda planta se ubicaba la residencia de su propietario, don Mariano Hernández, mientras que el primer nivel albergaba una tienda de telas y ropa.",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.672171595958613, -100.3146967899208],
+        id:'broble',
+        title: "La Basílica Lateranense del Roble",
+        description:"Construida en el siglo XIX, la antigua Basílica de Nuestra Señora del Roble es un símbolo religioso e histórico de Monterrey. Su arquitectura refleja un estilo neoclásico, con detalles que resaltan la devoción mariana de la región. Este templo fue erigido para albergar a la venerada imagen de la Virgen del Roble, encontrada milagrosamente en el tronco de un árbol en el siglo XVI. La basílica se convirtió en un centro de peregrinación y fe, consolidándose como uno de los lugares más importantes para la comunidad católica en el norte de México. Aunque ha sido renovada, su esencia histórica y espiritual perdura en el corazón de la ciudad.",
+        icon:'church'
+    },
+
+    { 
+        coords: [25.674305902449856, -100.31548538884569],
+        id:'ccivil',
+        title: "Colegio Civil",
+        description:"Uno de los edificios más antiguos y emblemáticos del centro de Monterrey, el Colegio Civil, inició su construcción en 1794 bajo la dirección del arquitecto francés Jean Crouset. A finales de los años treinta del siglo XX, se modificó su frontispicio y se añadió un segundo nivel, completado en la década de los cuarenta. En los años sesenta, albergó a las Preparatorias 1 y 3 de la Universidad Autónoma de Nuevo León (UANL). Desde enero de 2007, funciona como el Centro Cultural Universitario, preservando su legado histórico y arquitectónico.Fuente: Cultura UANL",
+        icon:'generic'
+    },
+
+    
 
 
 ];
