@@ -339,6 +339,41 @@ const markers = [
         biblio:"Monterrey del Ayer"
     },
 
+    { 
+        coords: [25.665118594278415, -100.30919278264723],
+        id:'jardoncoss',
+        title: "Cruce de la calle Dr. Coss Jardón 1900",
+        description:"En la esquina derecha (donde dice La Paz y ahora está el Oxxo) estuvo la Capilla de Santa Rita, de la cual se dice la mamá de Agapito Treviño, doña Josefa González era la que cuidaba el lugar y que en varias ocasiones el famoso bandido se resguardó.",
+        icon:'genericS',
+        biblio:"Leonardo M. Hernández"
+    },
+
+    { 
+        coords: [25.66852043483142, -100.3143732584116],
+        id:'tarnava',
+        title: "Edificio Tárnava",
+        description:"En este extinto edificio se estableció la XEH, la primera estación de Radio de todo México, hoy en día existe un conocido negocio de telas.",
+        icon:'genericS'
+    },
+
+    { 
+        coords: [25.667677439512357, -100.31063215194294],
+        id:'londres',
+        title: "La ciudad de Londres",
+        description:"En la esquina suroeste del cruce de las calles Zaragoza y Padre Mier existió la tienda de ropa La Ciudad de Londres,antes albergó al periódico The Monterrey News de 1892 a  1911, edificio construido a finales del siglo XIX.",
+        icon:'genericS',
+        biblio:"Monterrey del Ayer"
+    },
+
+    { 
+        coords: [25.66699382540714, -100.31082814465823],
+        id:'moreloszaragoza',
+        title: "Morelos y Zaragoza ",
+        description:"",
+        icon:'genericS',
+        biblio:"Monterrey del Ayer"
+    },
+
     
 
 
