@@ -66,8 +66,8 @@ const icons = {
     }),
     cinema: L.icon({
         iconUrl: 'images/icons/cinema.png',
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
+        iconSize: [35, 35],
+        iconAnchor: [20, 30],
         popupAnchor: [0, -40]
     }),
     church: L.icon({
@@ -84,11 +84,11 @@ const markers = [
         coords: [25.664795997346236, -100.31165318508616],
         id:'circulo-mercantil',
         title: "Circulo Mercantil",
-        description: "El Círculo Mercantil Mutualista de Monterrey fue constituido en 1901 y contaba con 38 socios. El edificio actual fue diseñado por FIUSA y su construcción dirigida por Juan Garza Lafón, inaugurándose en septiembre de 1933. Ocupa parte del terreno de la antigua iglesia y convento de San Francisco que cerraban la calle de Zaragoza al sur y que fueron destruidos en 1914",
+        description: "El Círculo Mercantil Mutualista de Monterrey fue constituido en 1901 y contaba con 38 socios.\nEl edificio actual fue diseñado por FIUSA y su construcción dirigida por Juan Garza Lafón, inaugurándose en septiembre de 1933. Ocupa parte del terreno de la antigua iglesia y convento de San Francisco que cerraban la calle de Zaragoza al sur y que fueron destruidos en 1914",
         icon:'genericS'   
     },
     { 
-        coords: [25.668122, -100.310596],
+        coords: [25.668459242691252, -100.31006796984998],
         id:'cine-elizondo',
         title: "Cine Elizondo",
         description: "El imponente y legendario Gran Cinema ELIZONDO, es sin duda uno de los íconos más representativos de Monterrey y que se ubicaba en la acera Oriente en el 833 Sur de la avenida Zaragoza entre las calles de Padre Mier y Mariano Matamoros, dónde hoy se encuentra la Fuente de Neptuno de la Macro Plaza, en el centro de la ciudad de Monterrey, NL, México..",
@@ -151,7 +151,7 @@ const markers = [
         icon:'church'
     },
     { 
-        coords: [25.666254389817944, -100.31108824969155],
+        coords: [25.666102756126584, -100.31124099632491],
         id:'palMun',
         title: "Antiguo Palacio Municipal de Monterrey",
         description:"",
@@ -315,7 +315,7 @@ const markers = [
     },
 
     { 
-        coords: [25.674305902449856, -100.31548538884569],
+        coords: [25.67403027971204, -100.31518974419711],
         id:'ccivil',
         title: "Colegio Civil",
         description:"Uno de los edificios más antiguos y emblemáticos del centro de Monterrey, el Colegio Civil, inició su construcción en 1794 bajo la dirección del arquitecto francés Jean Crouset. A finales de los años treinta del siglo XX, se modificó su frontispicio y se añadió un segundo nivel, completado en la década de los cuarenta. En los años sesenta, albergó a las Preparatorias 1 y 3 de la Universidad Autónoma de Nuevo León (UANL). Desde enero de 2007, funciona como el Centro Cultural Universitario, preservando su legado histórico y arquitectónico.Fuente: Cultura UANL",
@@ -331,7 +331,7 @@ const markers = [
     },
 
     { 
-        coords: [25.667924254151117, -100.31067863065792],
+        coords: [25.66830989956899, -100.31060737587246],
         id:'zaramier',
         title: "Zaragoza 1880",
         description:"Monterrey, Nuevo Leon, México. La antigua calle del Ojo de Agua (hoy Zaragoza) en su cruce con Padre Mier, vista hacia el sur. Ca. 1880.",
@@ -357,7 +357,7 @@ const markers = [
     },
 
     { 
-        coords: [25.667677439512357, -100.31063215194294],
+        coords: [25.66751332405109, -100.31051096070406],
         id:'londres',
         title: "La ciudad de Londres",
         description:"En la esquina suroeste del cruce de las calles Zaragoza y Padre Mier existió la tienda de ropa La Ciudad de Londres,antes albergó al periódico The Monterrey News de 1892 a  1911, edificio construido a finales del siglo XIX.",
@@ -373,6 +373,82 @@ const markers = [
         icon:'genericS',
         biblio:"Monterrey del Ayer"
     },
+
+    { 
+        coords: [25.66775948547404, -100.31088648912464],
+        id:'hiturbide',
+        title: "Hotel Iturbide",
+        description:"",
+        icon:'genericS',
+    },
+    { 
+        coords: [25.664345617918585, -100.30582851623512],
+        id:'puenteJ',
+        title: "Puente de madera",
+        description:"Puente de madera instalado en el año de 1934 sobre el río Santa Catarina para unir la calle Pedro Martínez con la calle Raymundo Jardón del barrio antiguo de Monterrey.Ca. 1935 La estructura se mantuvo por cuatro años, ya que en 1938 se presentó una fuerte inundación que destruyó tal puente.",
+        icon:'genericB',
+        biblio:"Monterrey del Ayer"
+    },
+
+    { 
+        coords: [25.670169030635165, -100.3315714709277],
+        id:'calleReal',
+        title: "Escena vespertina sobre la Calle Real",
+        description:"Escena vespertina sobre la Calle Real (hoy Hidalgo ) alrededor del año 1900 ; frente a la acera sur se observa el tendido de rieles para el paso de los tranvías de mulitas. La casona del lado derecho de la imágen era llamada la Casa del Mirador , construída a mediados del siglo XIX , en la que en febrero de 1864 recibió la visita del presidente Juárez .",
+        icon:'genericB',
+        biblio:"Monterrey del Ayer"
+    },
+
+    { 
+        coords: [25.670349017505607, -100.31077618826608],
+        id:'teatroJuarez',
+        title: "Teatro Juarez",
+        description:"El Teatro Juárez se ubicaba en la calle Zaragoza, en su intersección con Terán (hoy Juan Ignacio Ramón) inaugurado un 15 de septiembre de 1898, en 1909 fué victima de un voraz incendio, fué reabilitado en el año de 1910 llevando el nombre de Teatro Independencia. Hacia 1937 fué remodelado como Teatro y cinema Rex; en la década de los 70's albergó al cine Olimpia , dejando de ser teatro. Finalmente en el año de 1982, el histórico recinto fué demolido para dar paso a los trabajos de la Macroplaza.",
+        icon:'cinema',
+        biblio:"Monterrey del Ayer"
+    },
+
+    { 
+        coords: [25.67469780528734, -100.31650634455947],
+        id:'cwash',
+        title: "Manifestación popular de la Gran Convención Electoral",
+        description:"",
+        icon:'genericS'
+    
+    },
+
+    { 
+        coords: [25.667393183388317, -100.31610226400613],
+        id:'pdegollado',
+        title: "Plaza Degollado",
+        description:"La Constancia era la fábrica azucarera, propiedad de don Pedro P.Quintanilla, en una fotografía de la última década del siglo XIX, de las primeras construcciones de tres niveles en el centro de la ciudad, dicho predio se ubicaba en la acera sur de la calle Hidalgo, entre Garibaldi y Juárez, a escasos metros tenía como vecinos, al oriente el palacete de don Valentín Rivero y al poniente la casona del gobernador de Nuevo León, el Gral. Bernardo Reyes. Al frente se situaba la Plaza Degollado, engalanada por la fuente de Mercurio, justo donde se unen las calles de Hidalgo y Morelos.",
+        icon:'generic',
+        biblio:"Monterrey del Ayer"
+    
+    },
+
+    { 
+        coords: [25.676202076101664, -100.32009540577526],
+        id:'alameda',
+        title: "Alameda",
+        description:"",
+        icon:'generic',
+        
+    
+    },
+
+    { 
+        coords: [25.669772615705636, -100.32654895661446],
+        id:'purisima',
+        title: "La Purisima",
+        description:"Al poniente del centro de la ciudad existió una capilla dedicada a la virgen de la Purísima, era muy pequeña y sencilla, con paredes de adobe y muy sencilla. Para el último tercio del siglo XIX se construyó en la esquina de las calles de las Flores, hoy Serafín Peña y la calle Real hoy Hidalgo una segunda capilla de corte sencillo franciscano y construída de blockes de sillar y que al paso de los años tuvo algunas adecuaciones.\n\nPara finales del siglo XIX ante la construcción de la capilla se creó el barrio de la Purísima y se trazó una plaza frente a la capilla. Para diciembre de 1941 se demolió la capilla para dar paso en el mismo sitio a la actual Basílica de la Purísima.\n\nCabe destacar que se rescató gran parte de piedra laja de la anterior capilla para recubrir la torre de la actual edificio, además de la cruz que remataba el frontispicio de la capilla demolida está colocada en la parte alta de las oficinas situadas frente a la calle Hidalgo.",
+        icon:'church',
+        biblio:"Monterrey del Ayer"
+    
+    },
+
+
+    
 
     
 
@@ -409,15 +485,22 @@ async function getImages(id) {
     return images; 
 }
 
-// Function to open the modal
+
 let currentIndex = 0;
 
-async function openModal(title, description, id,biblio) {
+async function openModal(title, description, id, biblio) {
     const images = await getImages(id); 
     document.getElementById('modalTitle').textContent = title;
-    document.getElementById('modalDescription').textContent = description;
-    if(biblio!=0){
-        document.getElementById('biblio').textContent = biblio;
+
+    // Reemplazar saltos de línea con <br> para que se muestren en HTML
+    const formattedDescription = description.replace(/\n/g, '<br>');
+    document.getElementById('modalDescription').innerHTML = formattedDescription;
+
+    // Agregar bibliografía si está presente
+    if (biblio) {
+        const biblioElement = document.createElement('p');
+        biblioElement.innerHTML = `<strong>Bibliografía:</strong> ${biblio}`;
+        document.getElementById('modalDescription').appendChild(biblioElement);
     }
 
     const carousel = document.querySelector('.image-carousel');
@@ -434,7 +517,6 @@ async function openModal(title, description, id,biblio) {
     document.querySelector('.modal-overlay').classList.add('active');
     updateCarouselButtons();
 }
-
 // Function to close the modal
 function closeModal() {
     document.querySelector('.modal-overlay').classList.remove('active');
@@ -503,7 +585,7 @@ markers.forEach((marker) => {
         if('biblio' in marker){
             openModal(marker.title, marker.description,marker.id,marker.biblio);
         }else{
-            openModal(marker.title, marker.description,marker.id,0);
+            openModal(marker.title, marker.description,marker.id,null);
         }
         
     });
