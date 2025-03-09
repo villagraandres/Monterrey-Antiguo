@@ -130,7 +130,7 @@ const markers = [
         icon:'genericS'
     },
     { 
-        coords: [25.667830043024228, -100.31736147495705],
+        coords: [25.66776179989249, -100.31643992629432],
         id:'vr',
         title: "Residencia del empresario español Valentin Rivero",
         description:"",
@@ -218,11 +218,11 @@ const markers = [
     },
 
     { 
-        coords: [25.667144844313135, -100.31195036923283],
+        coords: [25.666917603211434, -100.31181019292393],
         id:'morelos',
         title: "Calle Morelos ",
         description:"",
-        icon:'genericB'
+        icon:'genericS'
     },
 
     { 
@@ -279,7 +279,7 @@ const markers = [
         id:'galeana',
         title: "Constitucionalista en 1914",
         description:"En esta imagen se puede ver tropas Constitucionalista o Carrancistas despues de la batalla contra tropas federalistas.",
-        icon:'genericB'
+        icon:'genericS'
     },
 
     { 
@@ -479,10 +479,53 @@ const markers = [
         id:'granlogia',
         title: "Gran Logia Masónica de Nuevo León",
         description:"El edificio de la Gran Logia Masónica de Nuevo León, situado en la calle de Escobedo, entre M.M. del Llano y la calle de Tapia, fue inaugurado por el general Bernardo Reyes en 1906.",
-        icon:'genericS'
-    
+        icon:'genericS',
+        biblio:"Tec de Monterrey"
     },
 
+    { 
+        coords: [25.668276734541937, -100.31295452042518],
+        id:'imprenta',
+        title: "Imprenta Ramón Díaz y Cía.",
+        description:"En la esquina suroeste de las calles de Padre Mier y Emilio Carranza estuvo a principios del siglo XX la imprenta ''El Modelo'', que era propiedad de los señores Rafael García y Gustavo Madero. Posteriormente se estableció allí la imprenta Ramón Díaz y Cía. que aparece en la fotografía.",
+        icon:'genericS',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.667530273650712, -100.31393908650342],
+        id:'morelosGaleana',
+        title: "Vista de Morelos",
+        description:"Vista de la calle de Morelos desde Galeana hacia el poniente, alrededor del año de 1899.",
+        icon:'genericS',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.667309865532133, -100.31204383417108],
+        id:'botica',
+        title: "Botica “El León” ",
+        description:"La esquina noroeste de las calles de Morelos y Escobedo fue ocupada por la botica El León a principios del siglo XX, anteriormente había estado por la calle de Padre Mier. Antes que la botica ocupara ese lugar, allí mismo habían estado las oficinas del Gobierno del Estado. El Presidente Benito Juarez residió también en este edificio durante su estancia en Monterrey en el año de 1864.",
+        icon:'genericS',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.669118692472377, -100.3194060422919],
+        id:'villistas',
+        title: "Entrada de los villistas",
+        description:"En la esquina de las calles Cuauhtémoc y Bolívar (hoy calle de Padre Mier) se ve un grupo de jinetes, destacándose entre ellos el general Raúl Madero, quien se detiene a saludar a su señora madre.",
+        icon:'genericS',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.66783940335396, -100.31739812138083],
+        id:'ccosmos',
+        title: "Cine Cosmos",
+        description:"",
+        icon:'cinema',
+    },
 ];
 
 async function imageExists(url) {
