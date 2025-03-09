@@ -447,11 +447,41 @@ const markers = [
     
     },
 
-
+    { 
+        coords: [25.669224798214486, -100.31535225928435],
+        id:'juarezMata',
+        title: "Revolucionarios",
+        description:"Revolucionarios en 1912.",
+        icon:'genericS'
     
+    },
 
+    { 
+        coords: [25.671060150413165, -100.30613369926355],
+        id:'presaChica',
+        title: "Antigua calle de la Presa",
+        description:"",
+        icon:'genericS'
     
+    },
 
+    { 
+        coords: [25.66389676220323, -100.31280976196005],
+        id:'calleTeatroConsti',
+        title: "Jacales en el lecho del rio Santa Catarina previo a su canalizacion",
+        description:"",
+        icon:'genericS'
+    
+    },
+
+    { 
+        coords: [25.67884659733056, -100.31015505799064],
+        id:'granlogia',
+        title: "Gran Logia Masónica de Nuevo León",
+        description:"El edificio de la Gran Logia Masónica de Nuevo León, situado en la calle de Escobedo, entre M.M. del Llano y la calle de Tapia, fue inaugurado por el general Bernardo Reyes en 1906.",
+        icon:'genericS'
+    
+    },
 
 ];
 
@@ -596,15 +626,3 @@ document.getElementById('prevButton').addEventListener('click', prevImage);
 document.getElementById('nextButton').addEventListener('click', nextImage);
 document.getElementById('closeButton').addEventListener('click', closeModal);
 
-//polyline
-var latlngs = [
-    [25.6710283319292, -100.31010035916235],
-    [25.6708040921522, -100.30904137808261],
-    [25.670447607535806, -100.30650237525288]
-];
-
-//river
-var polyline = L.polyline(latlngs, {color: 'blue'}).addTo(map).on('click',()=>{
-    alert("sa");
-});
-map.fitBounds(polyline.getBounds());
