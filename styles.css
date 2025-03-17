@@ -185,18 +185,25 @@ img {
 /* Ajustes específicos para dispositivos móviles */
 @media (max-width: 768px) {
     .carousel-image {
-        max-width: 110px; /* Aumenta el tamaño máximo de las imágenes */
-        max-height: 110px; /* Aumenta el tamaño máximo de las imágenes */
+        max-width: 110px; 
+        max-height: 110px; 
+        width: 100%; 
+        height: auto; 
+        margin: 10px auto; 
     }
 
     .zoomed-image {
-        max-height: 90vh; /* Aumenta el tamaño de la imagen ampliada */
+        max-width: 100%; 
+        max-height: 80vh; 
+        width: auto; 
+        height: auto; 
+        margin: 0 auto; 
     }
 
-    .carousel-buttons button {
-        font-size: 32px; /* Aumenta el tamaño de los botones de navegación */
-        width: 50px; /* Aumenta el ancho de los botones */
-        height: 50px; /* Aumenta la altura de los botones */
+    .image-carousel {
+        gap: 20px; 
+        padding: 10px; 
     }
+
     
 }

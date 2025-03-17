@@ -545,6 +545,36 @@ const markers = [
         description:"",
         icon:'cinema',
     },
+
+    { 
+        coords: [25.670910968670515, -100.31512101015544],
+        id:'allendeRamon',
+        title: "Calle Juarez entre Allende y Juan Ignacio",
+        description:"",
+        icon:'genericS',
+    },
+
+    { 
+        coords: [25.67610279335401, -100.31372796864065],
+        id:'bautista',
+        title: "Primera Iglesia Bautista de Monterrey",
+        description:"",
+        icon:'church',
+    },
+    { 
+        coords: [25.663369030547337, -100.31583519121511],
+        id:'comerciantesRio',
+        title: "Comerciantes en el lecho del río Santa Catarina",
+        description:"",
+        icon:'genericS',
+    },
+    { 
+        coords: [25.6553166688916, -100.31697999011939],
+        id:'capLourdes',
+        title: "Capilla de Lourdes",
+        description:"Su construcción data del último cuarto del siglo XIX , de estilo neogótico muy dado en los templos europeos.Sus muros estaban compuestos de sillar ; su destrucción se dió a finales de los años veinte , ya que en los planos de Monterrey en 1930 ya no aparecía registrada.",
+        icon:'church',
+    },
 ];
 
 async function imageExists(url) {
