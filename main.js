@@ -1,5 +1,5 @@
 // Inicializa el mapa centrado en Monterrey
-const map = L.map('map').setView([25.665306434652894, -100.3107755434175], 20);
+const map = L.map('map').setView([25.665306434652894, -100.3107755434175], 16);
 
 // Capa base 1: Mapa estándar
 const mapaBase = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -50,6 +50,25 @@ const icons = {
         iconUrl: 'images/icons/generic.png',
         iconSize: [40, 40],
         iconAnchor: [20, 40],
+        popupAnchor: [0, -40]
+    }),
+    park: L.icon({
+        iconUrl: 'images/icons/park.png',
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40]
+    }),
+
+    store: L.icon({
+        iconUrl: 'images/icons/store.png',
+        iconSize: [35, 35],
+        iconAnchor: [20, 20],
+        popupAnchor: [0, -40]
+    }),
+    hotel: L.icon({
+        iconUrl: 'images/icons/hotel.png',
+        iconSize: [35, 35],
+        iconAnchor: [20, 20],
         popupAnchor: [0, -40]
     }),
     genericS: L.icon({
@@ -120,7 +139,7 @@ const markers = [
         id:'pzaragoza',
         title: "Plaza Zaragoza",
         description:"",
-        icon:'generic'
+        icon:'park'
     },
     { 
         coords: [25.667978736383702, -100.31148212647439],
@@ -190,7 +209,7 @@ const markers = [
         id:'tSorpresa',
         title: "Sorpresa y Primavera",
         description:"La tienda Sorpresa y Primavera fue fundada el 1 de marzo de 1891 por los hermanos Manuel, José y Rufino Cantú Treviño en la calle del Comercio (hoy Morelos) en Monterrey. Tras su éxito, adquirieron la propiedad y en 1900 contrataron al arquitecto Alfred Giles para construir un nuevo edificio. Inaugurado en 1901, este edificio de tres pisos albergaba oficinas, una tienda de artículos importados y telas locales, y contaba con el primer elevador en Monterrey, aunque era poco usado por la clientela de la época. En mayo de 1926, un incendio destruyó esta joya arquitectónica, que permanece en el recuerdo de la ciudad.",
-        icon:'genericS'
+        icon:'store'
     },
 
     { 
@@ -255,7 +274,7 @@ const markers = [
         id:'paletos',
         title: "Sastreria A los cien mil paletos",
         description:"La sastrería A los cien mil paletos estaba ubicada en la esquina de Morelos y Juan Zuazua, como se aprecia en una fotografía de finales del siglo XIX.",
-        icon:'genericS'
+        icon:'store'
     },
 
     { 
@@ -422,7 +441,7 @@ const markers = [
         id:'pdegollado',
         title: "Plaza Degollado",
         description:"La Constancia era la fábrica azucarera, propiedad de don Pedro P.Quintanilla, en una fotografía de la última década del siglo XIX, de las primeras construcciones de tres niveles en el centro de la ciudad, dicho predio se ubicaba en la acera sur de la calle Hidalgo, entre Garibaldi y Juárez, a escasos metros tenía como vecinos, al oriente el palacete de don Valentín Rivero y al poniente la casona del gobernador de Nuevo León, el Gral. Bernardo Reyes. Al frente se situaba la Plaza Degollado, engalanada por la fuente de Mercurio, justo donde se unen las calles de Hidalgo y Morelos.",
-        icon:'generic',
+        icon:'park',
         biblio:"Monterrey del Ayer"
     
     },
@@ -432,7 +451,7 @@ const markers = [
         id:'alameda',
         title: "Alameda",
         description:"",
-        icon:'generic',
+        icon:'park',
         
     
     },
@@ -488,7 +507,7 @@ const markers = [
         id:'imprenta',
         title: "Imprenta Ramón Díaz y Cía.",
         description:"En la esquina suroeste de las calles de Padre Mier y Emilio Carranza estuvo a principios del siglo XX la imprenta ''El Modelo'', que era propiedad de los señores Rafael García y Gustavo Madero. Posteriormente se estableció allí la imprenta Ramón Díaz y Cía. que aparece en la fotografía.",
-        icon:'genericS',
+        icon:'store',
         biblio:"Tec de Monterrey"
     },
 

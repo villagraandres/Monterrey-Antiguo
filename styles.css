@@ -16,6 +16,7 @@ img {
     height: auto;
     margin-top: 10px;
 }
+/* Ajustes específicos para dispositivos móviles */
 
 #map {
     width: 100%;
@@ -178,4 +179,24 @@ img {
 
 .info-button button:hover {
     background: #0056b3;
+}
+
+
+/* Ajustes específicos para dispositivos móviles */
+@media (max-width: 768px) {
+    .carousel-image {
+        max-width: 110px; /* Aumenta el tamaño máximo de las imágenes */
+        max-height: 110px; /* Aumenta el tamaño máximo de las imágenes */
+    }
+
+    .zoomed-image {
+        max-height: 90vh; /* Aumenta el tamaño de la imagen ampliada */
+    }
+
+    .carousel-buttons button {
+        font-size: 32px; /* Aumenta el tamaño de los botones de navegación */
+        width: 50px; /* Aumenta el ancho de los botones */
+        height: 50px; /* Aumenta la altura de los botones */
+    }
+    
 }
