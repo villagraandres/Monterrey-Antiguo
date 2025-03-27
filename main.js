@@ -187,8 +187,9 @@ const markers = [
         coords: [25.66881261327536, -100.31168057706472],
         id:'teatroProg',
         title: "Teatro Progreso",
-        description:"",
-        icon:'cinema'
+        description:"Teatro del Progreso, primer teatro de Monterrey después del incendio que lo destruyó el 8 de septiembre de 1896. Este teatro estuvo en la acera oriente de la calle de Escobedo, entre Padre Mier y la calle de Matamoros.",
+        icon:'cinema',
+        biblio:"Tec de Monterrey"
     },
     { 
         coords: [25.668166404506614, -100.31516883925643],
@@ -575,6 +576,59 @@ const markers = [
         description:"Su construcción data del último cuarto del siglo XIX , de estilo neogótico muy dado en los templos europeos.Sus muros estaban compuestos de sillar ; su destrucción se dió a finales de los años veinte , ya que en los planos de Monterrey en 1930 ya no aparecía registrada.",
         icon:'church',
     },
+
+    { 
+        coords: [25.67998448394772, -100.31362300185242],
+        id:'ciudadela',
+        title: "La Ciudadela de Monterrey",
+        description:"La ciudadela tiene origen en el siglo XVII cuando el señor De Llanos emprende la construccion de grandes obras materiales en Monterrey, una de ellas una catedral. El 26 de noviembre de de 1794 se pone la primera piedra de la catedral, pero el Ayuntamiento obstaculiza la obra por lo cual nunca se termina de la cual solo quedan sus gruesos muros. La catedral pudo haberse convertido en una gran obra, puesto que en proporciones era comparable a la Metropolitana de la CDMX. <br><br> Mas tarde en la guerra entre centralistas y federalistas los antiguos muros son adaptados a un fortin o ciudadela. Es tambien en 1846 en la guerra contra los estadounidenses donde se dispone que la estructura sea techada y se hagan los atrincheramientos necesarios. Finalmente en 1880 es demolido el viejo edificio para construir casas habitaciones.",
+        icon:'generic',
+        biblio:"Crónicas y Sucedidos del Monterrey de los siglos XIX y XX"
+    },
+
+    { 
+        coords: [25.672300657831826, -100.31933357541799],
+        id:'pgonza',
+        title: "Plaza Gonzalitos",
+        description:"Antigua Plaza que se ubicaba frente al hospital González. Me genera duda si esta estatua sera la misma que ahora se encuentra en la Facultad de Medicina UANL.",
+        icon:'park',
+    },
+
+    { 
+        coords: [25.65764376221677, -100.31427965110662],
+        id:'bguadalupe',
+        title: "Antiguo Santuario de Guadalupe",
+        description:"El Antiguo Santuario de Guadalupe en Monterrey, ubicado en la colonia Independencia, tiene una historia ligada a la fe guadalupana y al desarrollo de la ciudad. Su construcción comenzó en 1895, con el objetivo de proporcionar un espacio de culto para los fieles que vivían en esa zona en crecimiento.<br><br> Para 1908, ya se había terminado la nave principal y parte de la fachada, momento en el que el templo se convirtió en vicaría fija bajo la jurisdicción de la Catedral Metropolitana de Monterrey. Durante décadas, el santuario funcionó como un importante centro religioso para los fieles de la región.",
+        icon:'church',
+    },
+    { 
+        coords: [25.682841960213626, -100.30030977064567],
+        id:'salinasrocha',
+        title: "Fábrica de camas ''Salinas y Rocha''",
+        description:"La fábrica de camas Salinas y Rocha fue una empresa que después sería una de las más importantes fábricas de muebles en la ciudad; fue fundada por los señores Joel Rocha y Benjamín Salinas en el año de 1906. Estuvo situada en las manzana que ocupan las calles de Francisco I. Madero, Reforma, Álvaro Obregón y Julián Villarreal.",
+        icon:'store',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.67815222999242, -100.31421582681186],
+        id:'hospmonterrey',
+        title: "Hospital Monterrey",
+        description:"Este hospital Monterrey se encontraba en la esquina noroeste de las calles de Juárez y Espinosa. Fue fundado en 1901 gracias al apoyo de la iglesia metodista del sur de los Estados Unidos de América. Posteriormente en ese edificio estuvo una escuela preparatoria.",
+        icon:'generic',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.669773492766108, -100.31522243962085],
+        id:'juarezmatamoros',
+        title: "Vista de la antigua Calle del Roble",
+        description:"",
+        icon:'genericS',
+        biblio:"Tec de Monterrey"
+    },
+
+
 ];
 
 async function imageExists(url) {
