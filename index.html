@@ -1,68 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mapa Histórico de Monterrey</title>
+    <meta charset="UTF-8">
+    <title>Monterrey Antiguo - Explora la historia de Monterrey a través de mapas interactivos</title>
+    <meta name="description" content="Descubre la historia y evolución de Monterrey con nuestro mapa interactivo. Explora lugares históricos, fotografías antiguas y datos curiosos de la ciudad.">
+    <meta name="keywords" content="Monterrey, historia, mapa interactivo, lugares históricos, fotos antiguas, patrimonio cultural">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="MTY Antiguo">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Monterrey Antiguo - Historia interactiva de la ciudad">
+    <meta property="og:description" content="Explora la historia de Monterrey a través de mapas interactivos y fotografías antiguas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mtyantiguo.com">
+    <meta property="og:image" content="https://www.mtyantiguo.com/images/social-preview.jpg">
+    
+ 
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-<!--     <link rel="stylesheet" href="https://unpkg.com/leaflet-sidebar-v2/css/leaflet-sidebar.min.css" />
- -->    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style" crossorigin="">
+    <link rel="preload" href="styles.css" as="style">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.mtyantiguo.com">
+    
+    <!-- Favicon and Apple Touch Icons -->
+    <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-
-   
     <link rel="stylesheet" href="styles.css">
     
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Monterrey Antiguo",
+      "url": "https://www.mtyantiguo.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.mtyantiguo.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 <body>
+    <!-- Navbar with ARIA attributes -->
+    <nav class="navbar" aria-label="Navegación principal">
+        <div class="logo" aria-label="MTY Antiguo">MTY Antiguo</div>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+            <span class="sr-only">Menú</span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#" aria-current="page">Inicio</a></li>
+            <li><a href="#mapa">Mapa</a></li>
+            <li><a href="#acerca-de">Acerca de</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="map" role="application" aria-label="Mapa interactivo de Monterrey antiguo"></div>
+
+        <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle"></h2>
+                    <button id="closeButton" class="close-button" aria-label="Cerrar modal">&times;</button>
+                </div>
+                <p id="modalDescription"></p>
+                <br>
+                <p id="biblio"></p>
+                <div id="zoomedImageContainer" role="img" aria-label="Imagen ampliada del lugar histórico"></div>
+                <div class="image-carousel" role="region" aria-label="Galería de imágenes"></div>
+                <div class="carousel-buttons">
+                    <button id="prevButton" aria-label="Imagen anterior">&lt;</button>
+                    <button id="nextButton" aria-label="Imagen siguiente">&gt;</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts with defer/async where appropriate -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
+    <script src="https://unpkg.com/leaflet-sidebar-v2/js/leaflet-sidebar.min.js" defer></script>
+    <script src="main.js" defer></script>
     
-<!--      <div id="sidebar" class="leaflet-sidebar collapsed">
-        <div class="leaflet-sidebar-tabs">
-            <ul role="tablist">
-                <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
-                <li><a href="#info" role="tab"><i class="fa fa-info"></i></a></li>
-            </ul>
-        </div>
-        <div class="leaflet-sidebar-content">
-            <div class="leaflet-sidebar-pane" id="home">
-                <h1 class="leaflet-sidebar-header">Home<span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-                <p>Welcome to the historical map of Monterrey!</p>
-            </div>
-            <div class="leaflet-sidebar-pane" id="info">
-                <h1 class="leaflet-sidebar-header">Info<span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-                <p>Here you can find information about historical places in Monterrey.</p>
-                <div id="marker-info">Haz clic en un marcador para ver información.</div>
-            </div>
-        </div>
-    </div>
-  -->
-    
-
-
-
-    <div id="map"></div>
-
-    <div class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle"></h2>
-                <button id="closeButton" class="close-button">&times;</button>
-            </div>
-            <p id="modalDescription"></p>
-            <br>
-            <p id="biblio"></p>
-            <div id="zoomedImageContainer"></div>
-            <div class="image-carousel"></div>
-            <div class="carousel-buttons">
-                <button id="prevButton">&lt;</button>
-                <button id="nextButton">&gt;</button>
-            </div>
-            
-        </div>
-    </div>
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    <script src="https://unpkg.com/leaflet-sidebar-v2/js/leaflet-sidebar.min.js"></script>
-    <script src="main.js"></script>
+    <!-- Structured data for historical places could be added here -->
 </body>
 </html>

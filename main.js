@@ -117,8 +117,9 @@ const markers = [
         coords: [25.66527821130441, -100.30966899686675],
         id:'catedral-mty',
         title: "Catedral de Monterrey",
-        description: "El imponente y legendario Gran Cinema ELIZONDO, es sin duda uno de los íconos más representativos de Monterrey y que se ubicaba en la acera Oriente en el 833 Sur de la avenida Zaragoza entre las calles de Padre Mier y Mariano Matamoros, dónde hoy se encuentra la Fuente de Neptuno de la Macro Plaza, en el centro de la ciudad de Monterrey, NL, México.." ,
-        icon:'church'
+        description: "Lucía, debido a la inundación de la Ciudad de Monterrey en 1611, se destina una nueva ubicación siendo la que conocemos actualmente, sin embargo, fue hasta 1663 que se inicia su construcción con los esfuerzos del obispo de Guadalajara, Cervantes y Carvajal. Y no fue sino hasta el año 1800 que se concluye la portada de la primera nave de la catedral. <br><br>El 03 de junio de 1833 es consagrada como la Catedral de Monterrey por el sexto obispo de Linares-Monterrey, fray José María de Jesús Belaunzarán y Ureña.La Arquidiócesis recibió el título de Arquidiócesis Metropolitana el 23 de Junio de 1891, por la Bula “Ilud in Primis” de Su Santidad León XIII." ,
+        icon:'church',
+        biblio:"Catedral Metropolitana de Monterrey"
     },
     { 
         coords: [25.670974, -100.310079],
@@ -249,7 +250,7 @@ const markers = [
         coords: [25.66582463256773, -100.3125876951903],
         id:'ancira',
         title: "Hotel Ancira ",
-        description:"",
+        description:" Su construcción se inició en 1909 y se inauguró el 26 de julio de 1912 con el nombre de Gran Hotel Monterrey. A raíz de la muerte del promotor del proyecto, Fernando Ancira Sánchez, en 1921 la familia cambió el nombre original por el de Gran Hotel Ancira.[1]​ En este hotel, se hospedaron figuras como María Félix, Agustín Lara, Rufino Tamayo, Leonora Carrington, Luciano Pavarotti y Gabriel García Márquez.",
         icon:'genericS'
     },
 
@@ -290,8 +291,9 @@ const markers = [
         coords: [25.684072911734955, -100.31807534921813],
         id:'arco',
         title: "Arco de la Independencia",
-        description:"Este puente, ubicado sobre el río Santa Catarina, fue una importante estructura de conexión en Monterrey durante finales del siglo XIX y principios del XX. Construido con un diseño funcional y resistente, el Puente de San Luisito facilitaba el tránsito de personas y mercancías en una época de crecimiento para la ciudad. Aunque ya no existe, su imagen permanece como testimonio del desarrollo urbano e histórico de la región.",
-        icon:'generic'
+        description:"El Arco de la Independencia, ubicado en el cruce de las avenidas Unión (Calzada Madero) y Progreso (Avenida Pino Suárez), fue el resultado de un concurso público para crear un monumento conmemorativo del primer centenario de la Independencia nacional. El proyecto, seleccionado por la Junta de Mejoras Materiales, fue realizado en el despacho del arquitecto Alfred Giles, en Monterrey, y construido con cantera rosa de San Luis Potosí, bajo la responsabilidad del maestro de obras Pedro Cabral. Su inauguración se llevó a cabo puntualmente el 16 de septiembre de 1910.",
+        icon:'generic',
+        biblio:"Flores Salazar, Armando V. Legado arquitectónico del gobierno de Bernardo Reyes. Ciencia UANL"
     },
 
     { 
@@ -321,7 +323,7 @@ const markers = [
     { 
         coords: [25.667414143701823, -100.312595303467],
         id:'reinera',
-        title: "La Reinera",
+        title: "La Reynera",
         description:"Construido en 1899, este emblemático edificio de estilo neoclásico está revestido con cantera rosa traída de San Luis Potosí. Su diseño se atribuye al arquitecto británico Alfred Giles. En su segunda planta se ubicaba la residencia de su propietario, don Mariano Hernández, mientras que el primer nivel albergaba una tienda de telas y ropa.",
         icon:'genericS'
     },
@@ -391,7 +393,7 @@ const markers = [
         title: "Morelos y Zaragoza ",
         description:"",
         icon:'genericS',
-        biblio:"Monterrey del Ayer"
+
     },
 
     { 
@@ -556,7 +558,7 @@ const markers = [
     },
 
     { 
-        coords: [25.67610279335401, -100.31372796864065],
+        coords: [25.675715526166243, -100.31349931529044],
         id:'bautista',
         title: "Primera Iglesia Bautista de Monterrey",
         description:"",
@@ -624,6 +626,78 @@ const markers = [
         id:'juarezmatamoros',
         title: "Vista de la antigua Calle del Roble",
         description:"",
+        icon:'genericS',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.676559866903016, -100.31391027573774],
+        id:'capuchinas',
+        title: "Plaza de las Capuchinas",
+        description:"En el terreno donde se ubica el Mercado Juárez existió la Plaza de las Capuchinas, en el sitio era común la llegada de ferias y carpas para la distracción de los vecinos, en el costado sur de la plaza(hoy calle Aramberri) se instaló el primer edificio de la iglesia Bautista en Monterrey en el año de 1885. En el costado poniente de la plaza, en la acera poniente de la Calle del Roble (hoy Juárez) en 1890 se construyó una amplia casona de sillar para las monjas capuchinas que nunca llegaron a Monterrey y la casa finalmente fue ocupada como el Cuartel Iturbide.El Mercado Juárez se inauguró en el año de 1909.",
+        icon:'genericS',
+        biblio:"Monterrey del Ayer"
+    },
+
+    { 
+        coords: [25.680222941317872, -100.31082794397317],
+        id:'geronimo',
+        title: "Casa del general Gerónimo Treviño",
+        description:"",
+        icon:'genericS',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.671761335018587, -100.33458016755523],
+        id:'vistaBravo',
+        title: "Calle de Padre Mier hacia el poniente",
+        description:"Vista de la calle de Padre Mier desde la calle de Bravo hacia el poniente, con el obispado al fondo.",
+        icon:'genericB',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.67169047181223, -100.31502822448032],
+        id:'boticaroble',
+        title: "Botica del Roble",
+        description:"Esta botica del Roble, que a la vez era consultorio, estaba situada en la acera oriente de la calle Juárez, ente Juan Ignacio Ramón y Quince de Mayo. Inicialmente fue establecida por el doctor Melesio Martínez.",
+        icon:'store',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.679157880880783, -100.31395796491309],
+        id:'escuelaNormal',
+        title: "Antiguo edificio de la Escuela Normal",
+        description:"El antiguo edificio de la Escuela Normal, situado en la calle de Juárez, entre Tapia y la calle M. M. de Llano, se inauguró a principios del siglo XX, el 22 de mayo de 1903, aunque la escuela fue creada desde 1879.",
+        icon:'generic',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.677447022459283, -100.32575810809288],
+        id:'toros',
+        title: "Antigua ''Plaza de toros Monterrey''",
+        description:"Esta plaza de toros, que se construyó a principios del siglo XX, estaba situada en las calles de Arramberri y Porfirio Díaz..",
+        icon:'generic',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.668296419653515, -100.31997924759217],
+        id:'hmilitar',
+        title: "Hospital Militar",
+        description:"El Hospital militar estuvo situado en Hidalgo, entre las calles de Cuauhtémoc y Pino Suárez (anteriormente llamada calzada del Progreso).",
+        icon:'genericS',
+        biblio:"Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.67022927634254, -100.33003029177713],
+        id:'tmirador',
+        title: "Torre de mirador",
+        description:"Esta casa fue propiedad del señor Juan López Peña, y estuvo situada en Hidalgo, entre las calles de Miguel Nieto y Martín de Zavala, y por la torre que sobresalía de la casa, a este rumbo se le conoce como la colonia del Mirador. Esta casa adquirió relevancia histórica porque el presidente Benito Juárez pasó allí una noche durante su visita a Monterrey en el año de 1864.",
         icon:'genericS',
         biblio:"Tec de Monterrey"
     },
@@ -738,6 +812,22 @@ function updateCarouselButtons() {
     document.getElementById('prevButton').disabled = currentIndex === 0;
     document.getElementById('nextButton').disabled = currentIndex === images.length - 1;
 }
+
+
+
+// Close modal and reset buttons for other modals
+
+
+
+
+// Show the welcome modal on application start
+
+
+
+document.querySelector(".menu-toggle").addEventListener("click", function() {
+    document.querySelector(".nav-links").classList.toggle("show");
+});
+
 
 // Function to zoom in on the selected image
 function zoomImage(index) {
