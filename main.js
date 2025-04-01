@@ -1,3 +1,4 @@
+
 // Inicializa el mapa centrado en Monterrey
 const map = L.map('map').setView([25.665306434652894, -100.3107755434175], 16);
 
@@ -102,7 +103,7 @@ const markers = [
     { 
         coords: [25.664795997346236, -100.31165318508616],
         id:'circulo-mercantil',
-        title: "Circulo Mercantil",
+        title: "Circulo Mercantill",
         description: "El Círculo Mercantil Mutualista de Monterrey fue constituido en 1901 y contaba con 38 socios.\nEl edificio actual fue diseñado por FIUSA y su construcción dirigida por Juan Garza Lafón, inaugurándose en septiembre de 1933. Ocupa parte del terreno de la antigua iglesia y convento de San Francisco que cerraban la calle de Zaragoza al sur y que fueron destruidos en 1914",
         icon:'genericS'   
     },
@@ -718,7 +719,9 @@ async function getImages(id) {
     const images = [];
     let index = 1;
     while (true) {
-        const path = `images/${id}/i${index}.jpg`;
+        const path = `images/${id}/i${index}.webp`;
+        console.log(path);
+        
         try {
             const exists = await imageExists(path);
             if (exists) {
