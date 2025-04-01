@@ -103,7 +103,7 @@ const markers = [
     { 
         coords: [25.664795997346236, -100.31165318508616],
         id:'circulo-mercantil',
-        title: "Circulo Mercantill",
+        title: "Circulo Mercantill2",
         description: "El Círculo Mercantil Mutualista de Monterrey fue constituido en 1901 y contaba con 38 socios.\nEl edificio actual fue diseñado por FIUSA y su construcción dirigida por Juan Garza Lafón, inaugurándose en septiembre de 1933. Ocupa parte del terreno de la antigua iglesia y convento de San Francisco que cerraban la calle de Zaragoza al sur y que fueron destruidos en 1914",
         icon:'genericS'   
     },
@@ -742,7 +742,7 @@ async function getImages(id) {
 let currentIndex = 0;
 
 async function openModal(title, description, id, biblio) {
-    const images = await getImages(id); 
+    //const images = await getImages(id); 
     document.getElementById('modalTitle').textContent = title;
 
     // Reemplazar saltos de línea con <br> para que se muestren en HTML
@@ -756,11 +756,21 @@ async function openModal(title, description, id, biblio) {
         document.getElementById('modalDescription').appendChild(biblioElement);
     }
 
+    const images = await getImages(id);
     const carousel = document.querySelector('.image-carousel');
-    carousel.innerHTML = images
-        .map((img, index) => `<img src="${img}" class="carousel-image ${index === 0 ? 'active' : ''}" alt="Imagen" onclick="zoomImage(${index})">`)
-        .join('');
+carousel.innerHTML = images
+    .map((img, index) => `
+        <img 
+            src="${index === 0 ? img : ''}" 
+            data-src="${img}" 
+            class="carousel-image ${index === 0 ? 'active' : ''}" 
+            alt="Imagen" 
+            loading="lazy" 
+            onclick="zoomImage(${index})">
+    `)
+    .join('');
 
+    
     const zoomedImageContainer = document.getElementById('zoomedImageContainer');
     zoomedImageContainer.innerHTML = images
         .map((img, index) => `<img src="${img}" class="zoomed-image ${index === 0 ? 'active' : ''}" alt="Imagen ampliada">`)
