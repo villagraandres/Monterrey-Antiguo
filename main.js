@@ -1,6 +1,6 @@
 
 // Inicializa el mapa centrado en Monterrey
-const map = L.map('map').setView([25.665306434652894, -100.3107755434175], 16);
+const map = L.map('map').setView([25.668247589057682, -100.31027985729408], 16);
 
 // Capa base 1: Mapa estándar
 const mapaBase = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -18,15 +18,6 @@ const satelital = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/servi
 // Agrega la capa satelital como predeterminada
 satelital.addTo(map);
 
-const infoButton = L.control({ position: 'topleft' });
-
-infoButton.onAdd = function(map) {
-    const div = L.DomUtil.create('div', 'info-button');
-    div.innerHTML = '<button id="infoButton">Info</button>';
-    return div;
-};
-
-infoButton.addTo(map);
 
 
 
@@ -36,14 +27,6 @@ const capasBase = {
     "Satelital": satelital
 };
 L.control.layers(capasBase).addTo(map);
-
-// Agrega una barra lateral
-const sidebar = L.control.sidebar({
-    autopan: true,
-    closeButton: true,
-    container: 'sidebar'
-}).addTo(map);
-
 
 // Icons
 const icons = {
@@ -126,14 +109,15 @@ const markers = [
         coords: [25.670974, -100.310079],
         id:'puente-juarez',
         title: "Antiguo Puente Juarez",
-        description:"Ya no existe ",
-        icon:'generic'
+        description:"El Puente Juárez, construido en 1886 durante la administración del general Bernardo Reyes, fue una obra clave para Monterrey. Diseñado por el ingeniero Miguel Mayora, su resistencia inicial fue cuestionada por los ciudadanos. Para demostrar su solidez, Mayora se situó bajo los arcos mientras pasaban pesadas carretas cargadas de leña, piedra y caña, disipando así las dudas. Este puente, promovido por la Junta de Mejoras Materiales (presidida por el doctor González), formó parte de los esfuerzos por modernizar la ciudad y controlar las aguas del antiguo Ojo de Agua de Santa Lucía, cuyo estancamiento causaba enfermedades. El Puente Juárez simbolizó avance técnico y confianza en la ingeniería de la época.",
+        icon:'generic',
+        biblio:"Crónicas y Sucedidos del Monterrey de los siglos XIX y XX"
     },
     { 
         coords: [25.68252068033367, -100.29634258027747],
         id:'prepa3',
         title: "Preparatoria 3",
-        description:"ahi esta ",
+        description:"Fundada en 1933, su sede histórica en Monterrey destaca por su arquitectura neoclásica de principios del siglo XX. Con columnas, arcos y detalles clásicos, el edificio combina tradición y educación. Aunque hoy tiene instalaciones modernas, su estructura antigua sigue siendo un símbolo de identidad para generaciones de estudiantes.",
         icon:'generic'
     },
     { 
@@ -197,8 +181,9 @@ const markers = [
         coords: [25.668166404506614, -100.31516883925643],
         id:'mercadoColon',
         title: "Antiguo Mercado Colon",
-        description:"Esta alberca llegó a ser justamente famosa y tuvo servicios de baños de todos tipos, como rusos, turcos, de regadera tibia y fría, de tina y de estanque; así como departamentos para masajes. La prensa local publicaba casi diariamente anuncios de la Compañía de Baños o La Alberca, El pueblo de Monterrey tuvo siempre gran cariño por esta instalación cuyas aguas de manantial nacido allí, fueron tradicionales, por pertenecer a lo que se llamó Río de Santa Lucía y más tarde el “Canalón”.",
-        icon:'genericS'
+        description:"El Mercado Colón fue inaugurado en 1875 en Monterrey, reemplazando a los antiguos puestos improvisados que desde 1853 ocupaban la plaza de la Carne. Este nuevo mercado, construido con una esbelta arquería y una torre con reloj, representó un avance significativo en la organización comercial de la ciudad. Surgió como respuesta a la necesidad de un espacio más ordenado y atractivo para el comercio, alejándose del bullicio y desorden de los mercados anteriores. Su nombre honra al explorador Cristóbal Colón, y durante décadas fue un centro importante de abasto y vida social en la ciudad. El Mercado Colón marcó una etapa clave en la evolución de los espacios comerciales en Monterrey durante el siglo XIX.",
+        icon:'store',
+        biblio:"Crónicas y Sucedidos del Monterrey de los siglos XIX y XX"
     },
     { 
         coords: [25.6697578116123, -100.3108505118439],
@@ -226,9 +211,10 @@ const markers = [
     { 
         coords: [25.685140263428753, -100.30971179021647],
         id:'ferro',
-        title: "Estacion de ferrocarril unión ",
-        description:"",
-        icon:'generic'
+        title: "Estacion de ferrocarril del Golfo ",
+        description:"La Estación del Golfo en Monterrey fue clave en la comunicación y transporte de la ciudad. Inicialmente, el traslado dependía de mulas, carretas y diligencias, con rutas peligrosas debido a asaltos y obstáculos naturales. La situación mejoró con la llegada del ferrocarril en 1882, conectando Monterrey con Nuevo Laredo y, posteriormente, con Tampico y San Luis Potosí. Inaugurada en 1891, la estación fue un edificio emblemático diseñado por Isaac D. Taylor. Durante la Revolución, jugó un papel estratégico en los ataques a Monterrey. En 1971, las vías fueron removidas y la estación restaurada como sede de la Casa de la Cultura de Nuevo León.",
+        icon:'generic',
+        biblio:'Tec de Monterrey'
     },
 
     { 
@@ -703,6 +689,24 @@ const markers = [
         biblio:"Tec de Monterrey"
     },
 
+    { 
+        coords: [25.672456959646496, -100.34000012789328],
+        id:'edamas',
+        title: "Escuela de Damas",
+        description:"Vista principal del Colegio del Sagrado Corazón de Jesús [también conocido como Colegio de las Damas] en Monterey, Nuevo León, principios del siglo XX. Se observa una construcción de forma rectangular de tres niveles en su lado oriente y de dos en el poniente, ubicada en el Cerro del Obispado [Padre Mier 1720]. Se aprecia un edificio conformado por tres secciones, una central y dos laterales, diseñado y construido por el arquitecto Pedro Gorozpe. En la sección central se observa la puerta principal de madera de doble hoja, acompañada de dos ventanas laterales. Las secciones laterales mantienen un ritmo de repetición muro-ventana a lo largo del segundo y el tercer nivel. Las fachadas del edificio están compuestas de ladrillo bicromático. Desde el 19 de septiembre de 1977 alberga a la Escuela Superior de Música y Danza de Monterrey.",
+        icon:'genericS',
+        biblio:"UNAM & Tec de Monterrey"
+    },
+
+    { 
+        coords: [25.673366610025816, -100.34240188784415],
+        id:'obispado',
+        title: "El Obispado",
+        description:"El edificio que hoy se conoce como El Obispado, fue originalmente construido con el propósito de que sirviera como casa de retiro al obispo fray Rafael José Verger, construyendo también una capilla aledaña. Desde 1816 el edificio fue usado como cuartel en varias ocasiones, hasta que en 1956 se le dedicó para servir como Museo Regional.",
+        icon:'generic',
+        biblio:"Tec de Monterrey"
+    },
+
 
 ];
 
@@ -830,7 +834,6 @@ function nextImage() {
     zoomImage(currentIndex);
 }
 
-// Function to update the state of the carousel buttons
 function updateCarouselButtons() {
     const images = document.querySelectorAll('.carousel-image');
     document.getElementById('prevButton').disabled = currentIndex === 0;
@@ -839,13 +842,6 @@ function updateCarouselButtons() {
 
 
 
-// Close modal and reset buttons for other modals
-
-
-
-
-// Show the welcome modal on application start
-
 
 
 document.querySelector(".menu-toggle").addEventListener("click", function() {
@@ -853,7 +849,7 @@ document.querySelector(".menu-toggle").addEventListener("click", function() {
 });
 
 
-// Function to zoom in on the selected image
+
 function zoomImage(index) {
     const zoomedImages = document.querySelectorAll('.zoomed-image');
     const carouselImages = document.querySelectorAll('.carousel-image');

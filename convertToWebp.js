@@ -58,6 +58,22 @@ async function processDirectory(currentDir, relativePath = '') {
   }
 }
 
+// Function to log messages with styles
+function logMessage(message, type = 'info') {
+  const logContainer = document.querySelector('.conversion-logs');
+  if (logContainer) {
+    const logEntry = document.createElement('div');
+    logEntry.className = `log-${type}`;
+    logEntry.textContent = message;
+    logContainer.appendChild(logEntry);
+    logContainer.scrollTop = logContainer.scrollHeight; // Auto-scroll to the bottom
+  }
+}
+
+// Update console.log to use styled logs
+console.log = (message) => logMessage(message, 'info');
+console.error = (message) => logMessage(message, 'error');
+
 // Verificación inicial
 console.log('🔍 Iniciando conversión recursiva...');
 if (!fs.existsSync(config.inputRoot)) {

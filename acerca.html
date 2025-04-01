@@ -19,8 +19,6 @@
     <meta name="twitter:title" content="Historia de Monterrey con mapas interactivos">
     <meta name="twitter:image" content="https://www.mtyantiguo.com/images/monterrey-antiguo.jpg">
     
- 
-
     <!-- Preload critical resources -->
     <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style" crossorigin="">
     <link rel="preload" href="styles.css" as="style">
@@ -28,7 +26,7 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.mtyantiguo.com">
     
-    <!-- Favicon and Apple Touch Icons -->
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
     <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
     
@@ -37,7 +35,44 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
-    <!-- Schema.org markup for Google -->
+    <!-- Inline Styles -->
+    <style>
+        body {
+            
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        main {
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        h1 {
+            color: #004d40;
+        }
+
+        a {
+            color: #00796b;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        
+    </style>
+    
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -53,45 +88,39 @@
     </script>
 </head>
 <body>
-    <!-- Navbar with ARIA attributes -->
-    <nav class="navbar" aria-label="Navegación principal">
-        <div class="logo" aria-label="MTY Antiguo">MTY Antiguo</div>
+    <!-- Navbar con accesibilidad mejorada -->
+    <nav class="navbar" aria-label="Menú principal">
+        <div class="logo" aria-label="Logo de MTY Antiguo">MTY Antiguo</div>
         <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">
             <i class="fas fa-bars" aria-hidden="true"></i>
-            <span class="sr-only">Menú</span>
+            <span class="sr-only">Abrir menú</span>
         </button>
         <ul class="nav-links" id="nav-links">
-            <li><a href="#mapa">Mapa</a></li>
-            <li><a href="acerca.html">Acerca de</a></li>
+            <li><a href="index.html">Mapa</a></li>
+            <li><a href="#acerca-de">Acerca de</a></li>
         </ul>
     </nav>
 
     <main>
-        <div id="map" role="application" aria-label="Mapa interactivo de Monterrey antiguo"></div>
-
-        <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 id="modalTitle"></h2>
-                    <button id="closeButton" class="close-button" aria-label="Cerrar modal">&times;</button>
-                </div>
-                <p id="modalDescription"></p>
-                <br>
-                <p id="biblio"></p>
-                <div id="zoomedImageContainer" role="img" aria-label="Imagen ampliada del lugar histórico"></div>
-                <div class="image-carousel" role="region" aria-label="Galería de imágenes"></div>
-                <div class="carousel-buttons">
-                    <button id="prevButton" aria-label="Imagen anterior">&lt;</button>
-                    <button id="nextButton" aria-label="Imagen siguiente">&gt;</button>
-                </div>
-            </div>
-        </div>
+        <section>
+            <h1>Explora la historia de Monterrey con mapas interactivos</h1>
+            <p>Esta página fue creada para difundir imágenes e historia de Monterrey. Comenzó como un proyecto personal para organizar fotografías antiguas, pero luego decidí compartirlo con todos los interesados en el patrimonio cultural de nuestra ciudad.</p>
+            <p><strong>Contacto:</strong></p>
+            <p>Email: <a href="mailto:villagraandres00@gmail.com">villagraandres00@gmail.com</a></p>
+            <p><a href="https://github.com/tu-repositorio" target="_blank" rel="noopener noreferrer">Repositorio en GitHub</a></p>
+        </section>
     </main>
 
-    <!-- Scripts with defer/async where appropriate -->
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+    document.querySelector(".nav-links").classList.toggle("show");
+});
+
+
+
+    </script>
+    <!-- Scripts optimizados -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
-    <script src="main.js" defer></script>
-    
-    <!-- Structured data for historical places could be added here -->
+  
 </body>
 </html>

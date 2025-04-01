@@ -208,9 +208,9 @@ html, body {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top: 50%;
+    top: 70%; /* Adjust this value to lower the buttons */
     transform: translateY(-50%);
-    width: calc(100% - 40px); /* Adjust width to be more centered */
+    width: calc(100% - 33px); /* Adjust width to be more centered */
     left: 20px; /* Center the buttons horizontally */
     pointer-events: none;
     z-index: 10;
