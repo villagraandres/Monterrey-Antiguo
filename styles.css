@@ -167,6 +167,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
+    margin-top: 40px;
 }
 
 .modal-header h2 {
