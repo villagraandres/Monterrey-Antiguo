@@ -94,7 +94,7 @@ const markers = [
         coords: [25.668459242691252, -100.31006796984998],
         id:'cine-elizondo',
         title: "Cine Elizondo",
-        description: "El imponente y legendario Gran Cinema ELIZONDO, es sin duda uno de los íconos más representativos de Monterrey y que se ubicaba en la acera Oriente en el 833 Sur de la avenida Zaragoza entre las calles de Padre Mier y Mariano Matamoros, dónde hoy se encuentra la Fuente de Neptuno de la Macro Plaza, en el centro de la ciudad de Monterrey, NL, México..",
+        description: "El Cine Elizondo, inaugurado el 10 de septiembre de 1943 en el centro de Monterrey, fue uno de los recintos cinematográficos más majestuosos de la ciudad antes de la llegada de las grandes cadenas. Construido sobre el antiguo Teatro Progreso y diseñado por el arquitecto Arturo Olivero Cedeño, contaba con una capacidad para mil 700 personas y una ornamentación única de estilo asiático, con figuras como un buda y un dragón. Su primera función proyectó China Sky y contó con la presencia de María Félix y Cantinflas. Pese a su valor arquitectónico y cultural, fue demolido el 2 de noviembre de 1981 para dar paso a la Macroplaza.",
         icon:'cinema' 
     },
     { 
@@ -774,9 +774,16 @@ async function openModal(title, description, id, biblio) {
 
     // Agregar bibliografía si está presente
     if (biblio) {
-        const biblioElement = document.createElement('p');
-        biblioElement.innerHTML = `<strong>Bibliografía:</strong> ${biblio}`;
-        document.getElementById('modalDescription').appendChild(biblioElement);
+        if(biblio=="Monterrey del Ayer"){
+            const biblioElement = document.createElement('p');
+            biblioElement.innerHTML = `<strong>Fuente:</strong> <a href="https://www.facebook.com/profile.php?id=100064729897342">${biblio}</a>`;
+            document.getElementById('modalDescription').appendChild(biblioElement);
+        }else{
+            const biblioElement = document.createElement('p');
+            biblioElement.innerHTML = `<strong>Fuente:</strong> ${biblio}`;
+            document.getElementById('modalDescription').appendChild(biblioElement);
+        }
+        
     }
 
     const carousel = document.querySelector('.image-carousel');
